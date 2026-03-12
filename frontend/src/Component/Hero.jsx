@@ -1,156 +1,107 @@
-import React, { useEffect, useRef } from "react";
-import * as THREE from "three";
+import { 
+  BarChart3, 
+  Users, 
+  Package, 
+  Zap 
+} from "lucide-react";
+import heroImage from "../assets/rms_hero.png";
 
 const Hero = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const container = canvasRef.current;
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    const scene = new THREE.Scene();
-
-    const camera = new THREE.PerspectiveCamera(
-      70,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 55;
-
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: "high-performance",
-    });
-
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x000000, 0);
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-    container.appendChild(renderer.domElement);
-
-    // ✅ Mobile optimization
-    const isMobile = window.innerWidth < 640;
-    const geometry = new THREE.OctahedronGeometry(isMobile ? 13 : 18, 2);
-
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xbbbbbb,
-      wireframe: true,
-      metalness: 0.25,
-      roughness: 0.45,
-    });
-
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    // Lights
-    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
-    directionalLight.position.set(50, 50, 50);
-    scene.add(directionalLight);
-
-    // ✅ Smooth animation using clock
-    const clock = new THREE.Clock();
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    // target rotation for smooth lerp
-    let targetX = 0;
-    let targetY = 0;
-
-    const animate = () => {
-      if (!prefersReducedMotion && !document.hidden) {
-        const dt = clock.getDelta();
-
-        // smooth speed
-        targetX += dt * 0.45;
-        targetY += dt * 0.75;
-
-        // smooth lerp
-        mesh.rotation.x += (targetX - mesh.rotation.x) * 0.06;
-        mesh.rotation.y += (targetY - mesh.rotation.y) * 0.06;
-      }
-
-      renderer.render(scene, camera);
-    };
-
-    renderer.setAnimationLoop(animate);
-
-    // ✅ Resize
-    const resizeObserver = new ResizeObserver(() => {
-      const { clientWidth, clientHeight } = container;
-      camera.aspect = clientWidth / clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(clientWidth, clientHeight);
-    });
-
-    resizeObserver.observe(container);
-
-    return () => {
-      resizeObserver.disconnect();
-      renderer.setAnimationLoop(null);
-
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
-
-      if (renderer.domElement.parentNode) {
-        renderer.domElement.parentNode.removeChild(renderer.domElement);
-      }
-    };
-  }, []);
+  const heroFeatures = [
+    { label: "Real-time Analytics", icon: BarChart3 },
+    { label: "100% Coordination", icon: Users },
+    { label: "Inventory Control", icon: Package },
+    { label: "Fast Automation", icon: Zap },
+  ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black text-white flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-10"
+      className="relative min-h-screen bg-blue-100 pt-32 pb-20 overflow-hidden"
     >
-      {/* 3D Background */}
-      <div
-        ref={canvasRef}
-        className="absolute inset-0 opacity-70 sm:opacity-80 pointer-events-none"
-        aria-hidden="true"
-      />
+      {/* 3D Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated Gradient Orbs */}
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-400/10 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-orange-200/20 blur-[100px] rounded-full animate-float opacity-70" />
+        <div className="absolute -bottom-[10%] left-[20%] w-[35%] h-[35%] bg-blue-300/10 blur-[120px] rounded-full animate-float-slow" />
+        
+        {/* 3D Floating Shapes */}
+        <div className="absolute top-1/4 left-[5%] w-24 h-24 bg-white/20 border border-white/30 rounded-3xl backdrop-blur-md rotate-12 animate-float shadow-2xl" />
+        <div className="absolute bottom-1/4 right-[8%] w-32 h-32 bg-orange-50/10 border border-orange-100/20 rounded-[2rem] -rotate-12 animate-float-slow shadow-xl" />
+        
+        {/* Subtle Mesh Grid */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] mix-blend-overlay" />
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl text-center py-16 sm:py-20 lg:py-24">
-        {/* Badge */}
-        <div
-          className="inline-flex items-center justify-center
-                     px-5 sm:px-8 lg:px-10
-                     py-3 sm:py-4
-                     bg-gray-900/70 border border-gray-600
-                     rounded-full
-                     text-base sm:text-2xl lg:text-3xl
-                     font-bold tracking-wider
-                     text-white
-                     mb-6 sm:mb-8"
-        >
-          <span className="leading-tight">RETAIL MANAGEMENT SYSTEM</span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex flex-col lg:flex-row items-center relative z-10">
+        
+        {/* Left Content */}
+        <div className="flex-1 text-center lg:text-left lg:pr-16" data-aos="fade-right">
+          {/* Version Badge */}
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white shadow-sm mb-8 animate-fade-in"
+            data-aos="fade-down"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-[#FF764D] animate-pulse" />
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">Retail Management System</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-[#1A1A1A] leading-[1] sm:leading-[1] mb-8 tracking-tight" data-aos="fade-up">
+            A unified digital <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">platform</span>
+          </h1>
+
+          <p className="text-gray-500 text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
+            Elevate your retail operations with a connected digital ecosystem. 
+            Automate workflows and coordinate teams seamlessly in real-time.
+          </p>
+
+          
+          {/* Feature Badges - Precisely 2x2 grid match, centered on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 max-w-lg mx-auto lg:mx-0 border-t border-gray-100 pt-10">
+            {heroFeatures.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div 
+                  key={i} 
+                  className="flex items-center sm:justify-start justify-center space-x-4 group"
+                  data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+                  data-aos-delay={400 + (i * 150)}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white shadow-xl shadow-blue-100/20 border border-white flex items-center justify-center text-[#FF764D] transition-all group-hover:scale-110 group-hover:rotate-6">
+                     <Icon className="w-5 h-5" strokeWidth={2.5} />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[#1A1A1A] font-black text-sm tracking-tight">{item.label}</p>
+                    <p className="text-xs text-gray-400 font-bold">Enabled</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Heading */}
-        <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-5 sm:mb-6 leading-[1.2] tracking-tight">
-          <span className="block">A unified digital platform</span>
-          <span className="block bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-            that connects all retail departments
-          </span>
-          <span className="block">into one smart, automated system.</span>
-        </h1>
+        {/* Right Content - Character + Decorative Rects */}
+        <div className="flex-1 mt-20 lg:mt-0 relative w-full flex justify-center items-center" data-aos="fade-left">
+          
+          {/* Decorative Rectangles (Reference Image Style) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border-2 border-blue-200/30 rounded-[4rem] rotate-[10deg] -z-10 animate-float" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] border-2 border-orange-100/30 rounded-[5rem] -rotate-[15deg] -z-10 animate-float-slow" />
 
-        {/* Description */}
-        <p className="text-gray-400 text-sm sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed opacity-90 px-1 sm:px-0">
-          Simplifies operations, improves coordination, and delivers
-          <span className="text-white font-medium"> real-time insights </span>
-          for faster, data-driven decisions.
-        </p>
+          {/* Main Character */}
+          <div className="relative z-10 w-full max-w-xl">
+            <div className="relative group">
+              {/* Image Glow */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-400/20 to-orange-400/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <img
+                src={heroImage}
+                alt="RMS Character"
+                className="w-full h-auto object-contain drop-shadow-2xl relative z-10 animate-float rounded-[3rem]"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

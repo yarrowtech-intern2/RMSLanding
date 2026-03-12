@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import {
   Target,
   Eye,
@@ -11,153 +9,143 @@ import {
 } from "lucide-react";
 
 const AboutUs = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 900,
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 80,
-    });
-    AOS.refresh();
-  }, []);
-
   const whyChoose = [
     {
       icon: Building2,
       text: "Centralized control of all retail departments.",
+      color: "bg-blue-50 text-blue-500",
     },
     {
       icon: BarChart3,
       text: "Real-time stock, sales, and vendor insights.",
+      color: "bg-orange-50 text-orange-500",
     },
     {
       icon: Workflow,
       text: "Automated workflows and barcode integration.",
+      color: "bg-blue-50 text-blue-500",
     },
     {
       icon: ShieldCheck,
       text: "Scalable, secure, and easy to use.",
+      color: "bg-orange-50 text-orange-500",
     },
   ];
 
   return (
     <section
       id="about"
-      className="relative w-full bg-black text-white overflow-hidden"
+      className="relative w-full bg-blue-100 py-24 overflow-hidden"
     >
-      {/* subtle background glow */}
-      <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] -translate-x-1/2 rounded-full bg-gray-800 blur-[120px]" />
-        <div className="absolute -bottom-48 right-[-140px] h-[340px] w-[340px] sm:h-[420px] sm:w-[420px] rounded-full bg-gray-900 blur-[120px]" />
+      {/* Background Blur Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[20%] left-[5%] w-[25%] h-[30%] bg-orange-200/10 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[20%] right-[5%] w-[25%] h-[30%] bg-blue-400/10 blur-[120px] rounded-full animate-pulse" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-10 py-12 sm:py-16 lg:py-20">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center" data-aos="fade-up">
-          <div className="flex justify-center">
-            <div
-              className="inline-flex items-center justify-center 
-                         px-6 sm:px-8 lg:px-10 
-                         py-2.5 sm:py-3
-                         bg-gray-800/70 border border-gray-700
-                         rounded-full text-lg sm:text-2xl lg:text-3xl
-                         font-semibold tracking-widest text-white"
-            >
+        <div
+          className="text-center max-w-3xl mx-auto mb-16"
+          data-aos="fade-up"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-full border border-white shadow-sm mb-6">
+            <span className="flex h-2 w-2 rounded-full bg-[#FF764D] animate-pulse"></span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-800">
               ABOUT US
-            </div>
+            </span>
           </div>
 
-          <p className="mt-4 sm:mt-5 text-gray-400 text-sm sm:text-lg lg:text-xl leading-relaxed px-1 sm:px-4">
-            <span className="font-semibold text-white">
-              An enterprise platform
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+            Digitizing the <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
+              Retail World
+            </span>
+          </h2>
+
+          <p className="text-gray-600 text-lg sm:text-xl leading-relaxed">
+            <span className="font-semibold text-gray-900">
+              RMS (Retail Management System)
             </span>{" "}
-            developed to digitize and automate the entire retail workflow.
+            is a powerful enterprise platform designed to streamline retail
+            operations, automate workflows, and provide real-time insights to
+            businesses for smarter decision making.
           </p>
         </div>
 
-        {/* Mission + Vision */}
-        <div className="mt-10 sm:mt-12 lg:mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+        {/* Mission & Vision */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          
           {/* Mission */}
           <div
-            className="rounded-3xl border border-gray-800 bg-gray-900/60 
-                       p-5 sm:p-7 lg:p-8 xl:p-10"
-            data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos="fade-right"
+            className="rounded-[2rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
           >
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* smaller icon */}
-              <div className="rounded-2xl bg-gray-800 border border-gray-700 p-2.5 sm:p-3">
-                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-gray-200" />
+            <div className="flex items-center gap-5 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
+                <Target size={28} strokeWidth={2.5} />
               </div>
-
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">
-                Our Mission
-              </h3>
+              <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
             </div>
 
-            <p className="mt-3 sm:mt-4 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
-              To empower retail businesses through automation, accuracy, and
-              transparency — enabling seamless collaboration across every
-              department and improving overall operational efficiency.
+            <p className="text-gray-600 leading-relaxed">
+              Our mission is to empower retail businesses through technology,
+              automation, and data-driven insights. RMS helps organizations
+              simplify operations, reduce errors, and enhance productivity
+              across every department.
             </p>
           </div>
 
           {/* Vision */}
           <div
-            className="rounded-3xl border border-gray-800 bg-gray-900/60 
-                       p-5 sm:p-7 lg:p-8 xl:p-10"
-            data-aos="fade-up"
-            data-aos-delay="200"
+            data-aos="fade-left"
+            className="rounded-[2rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
           >
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* smaller icon */}
-              <div className="rounded-2xl bg-gray-800 border border-gray-700 p-2.5 sm:p-3">
-                <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-200" />
+            <div className="flex items-center gap-5 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
+                <Eye size={28} strokeWidth={2.5} />
               </div>
-
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">
-                Our Vision
-              </h3>
+              <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
             </div>
 
-            <p className="mt-3 sm:mt-4 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
-              To become the most trusted and intelligent retail management
-              solution that drives digital transformation and growth for modern
-              retail enterprises.
+            <p className="text-gray-600 leading-relaxed">
+              Our vision is to become the most trusted and intelligent retail
+              management platform globally, enabling retailers to adopt digital
+              transformation and achieve sustainable growth.
             </p>
           </div>
         </div>
 
-        {/* Why Choose */}
-        <div className="mt-12 sm:mt-14 lg:mt-16" data-aos="fade-up">
-          <h3 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-center">
-            Why Choose RMS
+        {/* Why Choose RMS */}
+        <div data-aos="fade-up" className="text-center">
+          <h3 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-12">
+            Why Choose{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
+              RMS System
+            </span>
           </h3>
 
-          <div className="mt-6 sm:mt-8 lg:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChoose.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={index}
-                  className="rounded-2xl border border-gray-800 bg-gray-900/50 
-                             p-5 sm:p-6 lg:p-7
-                             hover:bg-gray-900/70 transition"
-                  data-aos="zoom-in"
+                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                   data-aos-delay={index * 100}
+                  className="bg-white p-6 rounded-2xl border border-gray-100 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl group"
                 >
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="shrink-0 rounded-2xl bg-gray-800 border border-gray-700 p-2.5 sm:p-3">
-                      <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-200" />
-                    </div>
-
-                    {/* Text */}
-                    <p className="text-gray-300 leading-relaxed font-medium text-sm sm:text-base lg:text-lg">
-                      {item.text}
-                    </p>
+                  <div
+                    className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition`}
+                  >
+                    <Icon size={20} strokeWidth={2.5} />
                   </div>
+
+                  <p className="text-gray-900 text-sm font-semibold leading-relaxed">
+                    {item.text}
+                  </p>
                 </div>
               );
             })}

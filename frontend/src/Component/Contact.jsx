@@ -28,10 +28,10 @@ const Contact = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 1000,
       easing: "ease-out-cubic",
       once: true,
-      offset: 80,
+      offset: 100,
     });
     AOS.refresh();
   }, []);
@@ -39,21 +39,21 @@ const Contact = () => {
   const onChange = (e) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  // ✅ Toast style (black theme)
+  // ✅ Toast style (Light premium theme)
   const toastStyle = {
-    background: "rgba(10,10,11,0.98)",
-    border: "1px solid rgba(255,255,255,0.10)",
-    borderRadius: "14px",
+    background: "#ffffff",
+    border: "1px solid #f0f0f0",
+    borderRadius: "1.5rem",
     fontSize: "14px",
-    color: "rgba(255,255,255,0.88)",
-    boxShadow: "0 24px 64px rgba(0,0,0,0.70)",
+    color: "#1A1A1A",
+    boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
+    fontWeight: "600",
   };
 
   const fireError = (msg) =>
     toast.error(msg, {
       position: "bottom-right",
       autoClose: 3200,
-      theme: "dark",
       style: toastStyle,
     });
 
@@ -61,7 +61,6 @@ const Contact = () => {
     toast.success(msg, {
       position: "bottom-right",
       autoClose: 3800,
-      theme: "dark",
       style: toastStyle,
     });
 
@@ -70,9 +69,8 @@ const Contact = () => {
 
     const n = form.name.trim();
     const em = form.email.trim();
-    const ph = form.phone.trim().replace(/\s|-/g, ""); // remove spaces & hyphen
+    const ph = form.phone.trim().replace(/\s|-/g, "");
 
-    // ✅ Validations
     if (!n) return fireError("Full name is required.");
     if (!em) return fireError("Email address is required.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))
@@ -81,18 +79,16 @@ const Contact = () => {
     if (!/^(\+91)?[6-9]\d{9}$/.test(ph))
       return fireError("Enter a valid Indian mobile number.");
 
-    // ✅ IMPORTANT: Apps Script Web App works best with URLSearchParams
     const payload = new URLSearchParams({
-      project: "RMS", // ✅ routes to Sheet 6 => "RMS"
+      project: "RMS",
       name: n,
       email: em,
-      mobile: ph, // ✅ Apps Script expects mobile OR phone, we send mobile
+      mobile: ph,
       message: (form.message || "").trim(),
     });
 
     try {
       setSending(true);
-
       const res = await fetch(import.meta.env.VITE_SCRIPT_URL, {
         method: "POST",
         headers: {
@@ -119,112 +115,95 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full bg-black text-white overflow-hidden"
+      className="relative w-full bg-blue-100 py-24 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] sm:h-[560px] sm:w-[560px] -translate-x-1/2 rounded-full bg-gray-800 blur-[140px]" />
-        <div className="absolute -bottom-52 left-[-180px] h-[380px] w-[380px] sm:h-[520px] sm:w-[520px] rounded-full bg-gray-900 blur-[140px]" />
-        <div className="absolute top-1/3 right-[-200px] h-[340px] w-[340px] sm:h-[460px] sm:w-[460px] rounded-full bg-gray-900 blur-[140px]" />
+      {/* 3D Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[40%] left-[1/2] -translate-x-1/2 w-[60%] h-[50%] bg-blue-400/5 blur-[150px] rounded-full" />
+        <div className="absolute -top-[10%] right-[0] w-[30%] h-[40%] bg-orange-200/10 blur-[100px] rounded-full animate-float" />
       </div>
 
-      {/* Grid Texture */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:48px_48px]" />
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+     {/* Header */}
+<div className="text-center max-w-3xl mx-auto mb-16 px-4" data-aos="fade-up">
+  <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white shadow-sm mb-6 animate-fade-in">
+    <span className="flex h-2 w-2 rounded-full bg-[#FF764D] animate-pulse" />
+    <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">
+      CONTACT US
+    </span>
+  </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-10 py-12 sm:py-16 lg:py-24">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
-          <div className="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 bg-gray-900/70 border border-gray-700/70 rounded-full text-[11px] sm:text-xs lg:text-sm font-semibold tracking-[0.18em] text-white/90">
-            CONTACT
-          </div>
+  <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1A1A1A] tracking-tight mb-6">
+    Let's start a <br className="hidden lg:block" />
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
+      conversation
+    </span>
+  </h2>
 
-          <h2 className="mt-5 sm:mt-6 text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-            Let's start a conversation
-          </h2>
-
-          <p className="mt-3 sm:mt-4 text-gray-400 text-sm sm:text-lg lg:text-xl leading-relaxed px-1 sm:px-2">
-            Have questions about our services? Our team is here to help you find
-            the right solution.
-          </p>
-        </div>
+  <p className="text-gray-500 text-lg sm:text-xl leading-relaxed font-medium">
+    Have questions about RMS System or want to schedule a demo?
+    Drop us a message and our team will get back to you shortly.
+  </p>
+</div>
 
         {/* Grid */}
-        <div className="mt-10 sm:mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-5 sm:gap-6 lg:gap-7 items-start">
-          {/* Left */}
-          <div data-aos="fade-up" data-aos-delay="80">
-            <div className="relative rounded-3xl border border-gray-800/80 bg-gradient-to-b from-gray-900/70 to-gray-950/60 p-6 sm:p-7 lg:p-8">
-              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-gray-900/70 border border-gray-700/70 text-xs font-semibold text-white/80">
-                <span className="w-2 h-2 rounded-full bg-white/60 animate-pulse" />
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-12 items-start">
+          
+          {/* Left Info */}
+          <div data-aos="fade-right">
+            <div className="p-8 sm:p-10 rounded-[2.5rem] bg-gray-50/50 border border-gray-100">
+              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white border border-gray-100 text-sm font-bold text-[#1A1A1A] shadow-sm mb-8">
+                <span className="w-2 h-2 rounded-full bg-[#FF764D] animate-pulse" />
                 Available Monday – Saturday
               </div>
 
-              <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed">
-                Reach us through any of the following channels and we’ll respond
-                within 24 hours.
-              </p>
-
-              <div className="mt-6 space-y-4">
-                {/* Address */}
-                <a
-                  href={CONTACT_INFO.mapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex gap-4 items-start p-4 rounded-2xl border border-gray-800/80 bg-gray-950/40 hover:bg-gray-900/40 transition"
-                >
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-gray-800/70 border border-gray-700/70">
-                    <MapPin size={18} className="text-gray-200" />
-                  </div>
-
-                  <div>
-                    <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                      Office Address
-                    </p>
-                    <p className="mt-1 text-sm sm:text-base text-white/85 leading-relaxed">
-                      3A, Bertram St, Esplanade,
-                      <br />
-                      Dharmatala, Kolkata — 700087
-                    </p>
-
-                    <p className="mt-2 text-xs text-white/70 font-semibold inline-flex items-center gap-1">
-                      View on Maps <ArrowRight size={12} />
-                    </p>
-                  </div>
-                </a>
-
+              <div className="space-y-6">
                 {/* Email */}
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="group flex gap-4 items-start p-4 rounded-2xl border border-gray-800/80 bg-gray-950/40 hover:bg-gray-900/40 transition"
+                  className="group flex gap-5 items-center p-6 rounded-[2rem] bg-white border border-transparent shadow-sm hover:shadow-xl hover:border-orange-100 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-gray-800/70 border border-gray-700/70">
-                    <Mail size={18} className="text-gray-200" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-blue-50 text-blue-500 transition-transform group-hover:scale-110">
+                    <Mail size={24} strokeWidth={2.5} />
                   </div>
-
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                      Email
-                    </p>
-                    <p className="mt-1 text-sm sm:text-base text-white/85 leading-relaxed">
-                      {CONTACT_INFO.email}
-                    </p>
+                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Email Us</p>
+                    <p className="text-lg font-bold text-[#1A1A1A]">{CONTACT_INFO.email}</p>
                   </div>
                 </a>
 
                 {/* Phone */}
                 <a
                   href={`tel:${CONTACT_INFO.tel}`}
-                  className="group flex gap-4 items-start p-4 rounded-2xl border border-gray-800/80 bg-gray-950/40 hover:bg-gray-900/40 transition"
+                  className="group flex gap-5 items-center p-6 rounded-[2rem] bg-white border border-transparent shadow-sm hover:shadow-xl hover:border-orange-100 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-gray-800/70 border border-gray-700/70">
-                    <Phone size={18} className="text-gray-200" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-blue-50 text-blue-500 transition-transform group-hover:scale-110">
+                    <Phone size={24} strokeWidth={2.5} />
                   </div>
-
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                      Phone
+                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Call Us</p>
+                    <p className="text-lg font-bold text-[#1A1A1A]">{CONTACT_INFO.phone}</p>
+                  </div>
+                </a>
+
+                {/* Address */}
+                <a
+                  href={CONTACT_INFO.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex gap-5 items-start p-6 rounded-[2rem] bg-white border border-transparent shadow-sm hover:shadow-xl hover:border-orange-100 transition-all"
+                >
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-orange-50 text-[#FF764D] shrink-0 transition-transform group-hover:scale-110">
+                    <MapPin size={24} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Visit Us</p>
+                    <p className="text-lg font-bold text-[#1A1A1A] leading-tight">
+                      3A, Bertram St, Esplanade, Kolkata — 700087
                     </p>
-                    <p className="mt-1 text-sm sm:text-base text-white/85 leading-relaxed">
-                      {CONTACT_INFO.phone}
+                    <p className="mt-2 text-sm text-[#FF764D] font-bold flex items-center gap-1">
+                      Open in Maps <ArrowRight size={14} />
                     </p>
                   </div>
                 </a>
@@ -232,117 +211,89 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right */}
-          <div data-aos="fade-up" data-aos-delay="160">
-            <div className="relative rounded-3xl border border-gray-800/80 bg-gradient-to-b from-gray-900/70 to-gray-950/60 p-6 sm:p-7 lg:p-10">
-              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60">
-                Send a message
-              </p>
-
-              <h3 className="mt-3 text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight">
-                We'd love to hear from you
+          {/* Right Form */}
+          <div data-aos="fade-left">
+            <div className="p-8 sm:p-12 rounded-[3rem] bg-white border border-gray-100 shadow-2xl shadow-gray-100">
+               <h3 className="text-2xl sm:text-3xl font-bold text-[#1A1A1A] tracking-tight mb-8">
+                We'd love to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">hear from you</span>
               </h3>
 
-              <form onSubmit={onSubmit} noValidate className="mt-8 space-y-5">
-                {/* Name + Email */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                      Full Name <span className="text-white/70">*</span>
+              <form onSubmit={onSubmit} noValidate className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-[#1A1A1A] ml-1">
+                      Full Name <span className="text-red-500">*</span>
                     </label>
-                    <div className="relative mt-2">
-                      <User
-                        size={16}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
-                      />
+                    <div className="relative">
+                      <User size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input
                         name="name"
                         value={form.name}
                         onChange={onChange}
-                        placeholder="Your full name"
-                        className="w-full rounded-2xl border border-gray-800/80 bg-gray-950/40 px-11 py-3 text-white placeholder:text-white/25 outline-none focus:border-gray-600 focus:ring-4 focus:ring-white/5"
+                        placeholder="Your name"
+                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                      Email <span className="text-white/70">*</span>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-[#1A1A1A] ml-1">
+                      Email ID <span className="text-red-500">*</span>
                     </label>
-                    <div className="relative mt-2">
-                      <Mail
-                        size={16}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
-                      />
+                    <div className="relative">
+                      <Mail size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input
                         name="email"
                         type="email"
                         value={form.email}
                         onChange={onChange}
-                        placeholder="Enter mail id"
-                        className="w-full rounded-2xl border border-gray-800/80 bg-gray-950/40 px-11 py-3 text-white placeholder:text-white/25 outline-none focus:border-gray-600 focus:ring-4 focus:ring-white/5"
+                        placeholder="mail@example.com"
+                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Phone */}
-                <div>
-                  <label className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                    Mobile Number <span className="text-white/70">*</span>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-[#1A1A1A] ml-1">
+                    Mobile Number <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative mt-2">
-                    <Phone
-                      size={16}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
-                    />
+                  <div className="relative">
+                    <Phone size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       name="phone"
                       value={form.phone}
                       onChange={onChange}
-                      placeholder="Enter Mobile no"
-                      className="w-full rounded-2xl border border-gray-800/80 bg-gray-950/40 px-11 py-3 text-white placeholder:text-white/25 outline-none focus:border-gray-600 focus:ring-4 focus:ring-white/5"
+                      placeholder="Enter mobile number"
+                      className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       type="tel"
-                      inputMode="numeric"
-                      autoComplete="tel"
-                      maxLength={13}
                     />
                   </div>
                 </div>
 
-                {/* Message */}
-                <div>
-                  <label className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/60">
-                    Message{" "}
-                    <span className="text-white/35 font-normal normal-case tracking-normal text-[11px]">
-                      — optional
-                    </span>
-                  </label>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-[#1A1A1A] ml-1">Message</label>
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={onChange}
                     rows={4}
-                    placeholder="Tell us how we can help you..."
-                    className="mt-2 w-full rounded-2xl border border-gray-800/80 bg-gray-950/40 px-4 py-3 text-white placeholder:text-white/25 outline-none focus:border-gray-600 focus:ring-4 focus:ring-white/5 resize-none"
+                    placeholder="How can we help you?"
+                    className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-6 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400 resize-none"
                   />
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full rounded-2xl bg-white text-black font-semibold py-3.5 flex items-center justify-center gap-2 hover:bg-white/90 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-[#FF764D] text-white font-black py-5 rounded-[1.25rem] shadow-lg shadow-orange-100 flex items-center justify-center gap-3 hover:bg-[#e66a45] transition-all transform hover:-translate-y-1 disabled:opacity-70"
                 >
                   {sending ? (
-                    <>
-                      <span className="w-4 h-4 rounded-full border-2 border-black/20 border-t-black animate-spin" />
-                      Sending...
-                    </>
+                     <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      <Send size={16} />
-                      Send Message
+                      <Send size={20} strokeWidth={3} />
+                      <span className="text-lg">Send Message</span>
                     </>
                   )}
                 </button>
@@ -361,10 +312,10 @@ const Contact = () => {
         pauseOnHover
         draggable
         limit={3}
-        theme="dark"
       />
     </section>
   );
 };
 
 export default Contact;
+
