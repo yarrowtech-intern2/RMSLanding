@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[70vh] bg-blue-100 pt-16 pb-12"
+      className="relative min-h-screen lg:min-h-[85vh] bg-blue-100 pt-28 pb-20"
     >
       {/* 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
