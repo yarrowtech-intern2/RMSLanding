@@ -123,7 +123,7 @@ const Contact = () => {
         <div className="absolute -top-[10%] right-[0] w-[30%] h-[40%] bg-orange-200/10 blur-[100px] rounded-full animate-float" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
         
      {/* Header */}
 <div className="text-center max-w-3xl mx-auto mb-16 px-4" data-aos="fade-up">
@@ -134,14 +134,14 @@ const Contact = () => {
     </span>
   </div>
 
-  <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.6rem] font-extrabold text-[#1A1A1A] tracking-tight mb-6">
+  <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.2rem] font-extrabold text-[#1A1A1A] tracking-tight mb-6 min-[1700px]:mb-3">
     Let's start a <br className="hidden lg:block" />
     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
       conversation
     </span>
   </h2>
 
-  <p className="text-gray-500 text-lg sm:text-xl min-[1700px]:text-lg leading-relaxed font-medium">
+  <p className="text-gray-500 text-lg sm:text-xl min-[1700px]:text-[12px] leading-relaxed font-medium">
     Have questions about RMS System or want to schedule a demo?
     Drop us a message and our team will get back to you shortly.
   </p>
@@ -214,7 +214,7 @@ const Contact = () => {
           {/* Right Form */}
           <div data-aos="fade-left">
             <div className="p-8 sm:p-12 rounded-[3rem] bg-white border border-gray-100 shadow-2xl shadow-gray-100">
-               <h3 className="text-2xl sm:text-3xl min-[1700px]:text-2xl font-bold text-[#1A1A1A] tracking-tight mb-8">
+               <h3 className="text-2xl sm:text-3xl min-[1700px]:text-[18px] font-bold text-[#1A1A1A] tracking-tight mb-8 min-[1700px]:mb-4">
                 We'd love to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">hear from you</span>
               </h3>
 

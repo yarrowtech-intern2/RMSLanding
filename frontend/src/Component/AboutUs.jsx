@@ -43,7 +43,7 @@ const AboutUs = () => {
         <div className="absolute bottom-[20%] right-[5%] w-[25%] h-[30%] bg-blue-400/10 blur-[120px] rounded-full animate-pulse" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div
@@ -57,14 +57,14 @@ const AboutUs = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.6rem] font-extrabold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.2rem] font-extrabold text-gray-900 mb-6 leading-tight">
             Digitizing the <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
               Retail World
             </span>
           </h2>
 
-          <p className="text-gray-600 text-lg sm:text-xl min-[1700px]:text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg sm:text-xl min-[1700px]:text-[12px] leading-relaxed">
             <span className="font-semibold text-gray-900">
               RMS (Retail Management System)
             </span>{" "}
@@ -119,7 +119,7 @@ const AboutUs = () => {
 
         {/* Why Choose RMS */}
         <div data-aos="fade-up" className="text-center">
-          <h3 className="text-4xl sm:text-5xl min-[1700px]:text-[2.6rem] font-bold text-gray-900 mb-12">
+          <h3 className="text-4xl sm:text-5xl min-[1700px]:text-[2.2rem] font-bold text-gray-900 mb-12 min-[1700px]:mb-6">
             Why Choose{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
               RMS System

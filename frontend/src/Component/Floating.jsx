@@ -21,25 +21,25 @@ const FloatingContact = () => {
         href={whatsappLink}
         target="_blank"
         rel="noreferrer"
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full
+        className="w-12 h-12 sm:w-14 sm:h-14 min-[1700px]:w-10 min-[1700px]:h-10 rounded-full
                    bg-[#25D366] flex items-center justify-center
                    shadow-lg hover:scale-105 transition"
         aria-label="Chat on WhatsApp"
         title="WhatsApp"
       >
-        <FaWhatsapp className="text-white text-2xl sm:text-3xl" />
+        <FaWhatsapp className="text-white text-2xl sm:text-3xl min-[1700px]:text-lg" />
       </a>
 
       {/* Gmail */}
       <a
         href={mailLink}
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full
+        className="w-12 h-12 sm:w-14 sm:h-14 min-[1700px]:w-10 min-[1700px]:h-10 rounded-full
                    bg-white flex items-center justify-center
                    shadow-lg hover:scale-105 transition"
         aria-label="Send Email"
         title="Email"
       >
-        <SiGmail className="text-red-600 text-2xl sm:text-3xl" />
+        <SiGmail className="text-red-600 text-2xl sm:text-3xl min-[1700px]:text-lg" />
       </a>
     </div>
   );

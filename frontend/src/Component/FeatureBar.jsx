@@ -44,7 +44,7 @@ const FeatureBar = () => {
 
   return (
     <div className="bg-blue-100 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl min-[1700px]:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((feature, i) => (
             <div 
@@ -56,7 +56,7 @@ const FeatureBar = () => {
               <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-inner`}>
                 {React.cloneElement(feature.icon, { size: 24 })}
               </div>
-              <h4 className="text-lg min-[1700px]:text-base font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
+              <h4 className="text-lg min-[1700px]:text-[13px] font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
               <p className="text-xs min-[1700px]:text-[10px] text-gray-500 font-bold leading-relaxed">{feature.desc}</p>
             </div>
           ))}

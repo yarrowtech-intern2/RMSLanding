@@ -57,7 +57,7 @@ const Header = () => {
         <div className="pointer-events-auto">
           <button
             onClick={() => scrollToId("home")}
-            className="text-3xl font-black tracking-tighter flex items-center gap-1 group"
+            className="text-3xl min-[1700px]:text-2xl font-black tracking-tighter flex items-center gap-1 group"
           >
             <span className="text-[#1A1A1A] transition-transform group-hover:scale-110">RMS</span>
           </button>
@@ -78,7 +78,7 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToId(item.id)}
-                  className={`relative px-4 py-2 text-sm font-bold transition-all ${
+                  className={`relative px-4 py-2 text-sm min-[1700px]:text-[12px] font-bold transition-all ${
                     isActive ? "text-[#FF764D]" : "text-gray-700 hover:text-[#FF764D]"
                   }`}
                 >

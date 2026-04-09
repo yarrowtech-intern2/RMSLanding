@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full bg-blue-100 border-t border-gray-50 pt-24 pb-12 overflow-hidden">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Info */}
@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="text-3xl font-black tracking-tight flex items-center gap-1 mb-6">
               <span className="text-[#1A1A1A]">RMS</span>
             </div>
-            <p className="text-gray-500 text-lg leading-relaxed mb-8">
+            <p className="text-gray-500 text-lg leading-relaxed mb-8 min-[1700px]:text-[12px] min-[1700px]:mb-4">
               Connecting all retail departments into one unified digital ecosystem for seamless automated operations.
             </p>
             <div className="flex items-center gap-4">
@@ -54,7 +54,7 @@ const Footer = () => {
                   className="text-left text-gray-500 hover:text-[#FF764D] font-bold transition-all flex items-center gap-2 group"
                 >
                   <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                  {item.label}
+                  <span className="min-[1700px]:text-[12px]">{item.label}</span>
                 </button>
               ))}
             </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                     <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-[#FF764D] shrink-0 transition-transform group-hover:scale-110">
                       <MapPin size={18} strokeWidth={2.5} />
                     </div>
-                    <p className="text-gray-500 font-bold leading-snug group-hover:text-[#FF764D] transition-colors">
+                    <p className="text-gray-500 font-bold leading-snug group-hover:text-[#FF764D] transition-colors min-[1700px]:text-[11px]">
                       3A, Bertram St, Esplanade, Dharmatala, Kolkata — 700087
                     </p>
                  </a>
