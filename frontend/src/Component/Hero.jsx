@@ -34,7 +34,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] mix-blend-overlay" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex flex-col lg:flex-row items-center relative z-10">
+      <div className="max-w-7xl min-[1700px]:max-w-5xl mx-auto px-6 lg:px-8 h-full flex flex-col lg:flex-row items-center relative z-10">
         
         {/* Left Content */}
         <div className="flex-1 text-center lg:text-left lg:pr-16" data-aos="fade-right">
@@ -47,12 +47,12 @@ const Hero = () => {
             <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">Retail Management System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-[4.8rem] min-[1700px]:text-[3.2rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-5 tracking-tight" data-aos="fade-up">
+          <h1 className="text-4xl sm:text-6xl lg:text-[4.8rem] min-[1700px]:text-[2.2rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-4 tracking-tight" data-aos="fade-up">
             A unified digital <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">platform</span>
           </h1>
 
-          <p className="text-gray-500 text-lg lg:text-xl min-[1700px]:text-sm max-w-xl min-[1700px]:max-w-sm mx-auto lg:mx-0 mb-6 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-gray-500 text-lg lg:text-xl min-[1700px]:text-[12px] max-w-xl min-[1700px]:max-w-xs mx-auto lg:mx-0 mb-5 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
             Elevate your retail operations with a connected digital ecosystem. 
             Automate workflows and coordinate teams seamlessly in real-time.
           </p>
@@ -69,12 +69,12 @@ const Hero = () => {
                   data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
                   data-aos-delay={400 + (i * 150)}
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white shadow-xl shadow-blue-100/20 border border-white flex items-center justify-center text-[#FF764D] transition-all group-hover:scale-110 group-hover:rotate-6">
-                     <Icon className="w-5 h-5" strokeWidth={2.5} />
+                  <div className="flex-shrink-0 w-12 h-12 min-[1700px]:w-10 min-[1700px]:h-10 rounded-2xl bg-white shadow-xl shadow-blue-100/20 border border-white flex items-center justify-center text-[#FF764D] transition-all group-hover:scale-110 group-hover:rotate-6">
+                     <Icon className="w-5 h-5 min-[1700px]:w-4 min-[1700px]:h-4" strokeWidth={2.5} />
                   </div>
                   <div className="text-left">
-                    <p className="text-[#1A1A1A] font-black text-sm tracking-tight">{item.label}</p>
-                    <p className="text-xs text-gray-400 font-bold uppercase">Enabled</p>
+                    <p className="text-[#1A1A1A] font-black text-sm min-[1700px]:text-[11px] tracking-tight">{item.label}</p>
+                    <p className="text-xs min-[1700px]:text-[9px] text-gray-400 font-bold uppercase">Enabled</p>
                   </div>
                 </div>
               );
@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] border-2 border-orange-100/30 rounded-[5rem] -rotate-[15deg] -z-10 animate-float-slow" />
 
           {/* Main Character */}
-          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-sm">
+          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-[300px]">
             <div className="relative group">
               {/* Image Glow */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-400/20 to-orange-400/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
