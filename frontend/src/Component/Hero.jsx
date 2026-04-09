@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] border-2 border-orange-100/30 rounded-[5rem] -rotate-[15deg] -z-10 animate-float-slow" />
 
           {/* Main Character */}
-          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-[300px]">
+          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-[240px]">
             <div className="relative group">
               {/* Image Glow */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-400/20 to-orange-400/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
