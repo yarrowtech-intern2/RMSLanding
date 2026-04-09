@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen lg:min-h-[85vh] bg-blue-100 pt-28 pb-20"
+      className="relative min-h-[90vh] lg:min-h-screen bg-blue-100 pt-20 pb-12 overflow-hidden"
     >
       {/* 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -47,19 +47,19 @@ const Hero = () => {
             <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">Retail Management System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-[4.8rem] min-[1700px]:text-[4.5rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-6 tracking-tight" data-aos="fade-up">
+          <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-6 tracking-tight" data-aos="fade-up">
             A unified digital <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">platform</span>
           </h1>
 
-          <p className="text-gray-500 text-lg lg:text-xl min-[1700px]:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-gray-500 text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
             Elevate your retail operations with a connected digital ecosystem. 
             Automate workflows and coordinate teams seamlessly in real-time.
           </p>
 
           
           {/* Feature Badges - Precisely 2x2 grid match, centered on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 max-w-lg mx-auto lg:mx-0 border-t border-gray-100 pt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 max-w-lg mx-auto lg:mx-0 border-t border-gray-100 pt-10">
             {heroFeatures.map((item, i) => {
               const Icon = item.icon;
               return (
