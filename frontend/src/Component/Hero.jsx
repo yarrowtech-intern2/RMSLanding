@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-blue-100 pt-20 pb-12"
+      className="relative min-h-[70vh] bg-blue-100 pt-16 pb-12"
     >
       {/* 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -47,19 +47,19 @@ const Hero = () => {
             <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">Retail Management System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-[4.8rem] min-[1700px]:text-[4.2rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-6 tracking-tight" data-aos="fade-up">
+          <h1 className="text-4xl sm:text-6xl lg:text-[4.8rem] min-[1700px]:text-[3.2rem] font-extrabold text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-5 tracking-tight" data-aos="fade-up">
             A unified digital <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">platform</span>
           </h1>
 
-          <p className="text-gray-500 text-lg lg:text-xl min-[1700px]:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-gray-500 text-lg lg:text-xl min-[1700px]:text-sm max-w-xl min-[1700px]:max-w-sm mx-auto lg:mx-0 mb-6 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
             Elevate your retail operations with a connected digital ecosystem. 
             Automate workflows and coordinate teams seamlessly in real-time.
           </p>
 
           
           {/* Feature Badges - Precisely 2x2 grid match, centered on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 max-w-lg mx-auto lg:mx-0 border-t border-gray-100 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 max-w-lg mx-auto lg:mx-0 border-t border-gray-100 pt-6">
             {heroFeatures.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] border-2 border-orange-100/30 rounded-[5rem] -rotate-[15deg] -z-10 animate-float-slow" />
 
           {/* Main Character */}
-          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-lg">
+          <div className="relative z-10 w-full max-w-lg lg:max-w-xl min-[1700px]:max-w-sm">
             <div className="relative group">
               {/* Image Glow */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-400/20 to-orange-400/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
