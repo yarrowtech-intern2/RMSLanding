@@ -59,7 +59,7 @@ const FAQ = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1A1A1A] tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.6rem] font-extrabold text-[#1A1A1A] tracking-tight mb-6">
             Frequently Asked <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
               Questions
@@ -89,7 +89,7 @@ const FAQ = () => {
                   className="w-full flex items-center justify-between gap-4 px-6 sm:px-10 py-6 sm:py-8 text-left"
                 >
                   <span
-                    className={`text-lg sm:text-xl font-bold transition-colors ${
+                    className={`text-lg sm:text-xl min-[1700px]:text-lg font-bold transition-colors ${
                       isOpen
                         ? "text-[#FF764D]"
                         : "text-[#1A1A1A] group-hover:text-[#FF764D]"
@@ -118,7 +118,7 @@ const FAQ = () => {
                     isOpen ? "max-h-[300px] pb-8 px-10" : "max-h-0"
                   }`}
                 >
-                  <p className="text-gray-500 text-lg leading-relaxed border-t border-orange-50 pt-6">
+                  <p className="text-gray-500 text-lg min-[1700px]:text-base leading-relaxed border-t border-orange-50 pt-6">
                     {item.a}
                   </p>
                 </div>

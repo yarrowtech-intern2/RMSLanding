@@ -83,14 +83,14 @@ const Services = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1A1A1A] tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.6rem] font-extrabold text-[#1A1A1A] tracking-tight mb-6">
             Core services that <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
               power RMS
             </span>
           </h2>
 
-          <p className="text-gray-500 text-lg sm:text-xl leading-relaxed font-medium">
+          <p className="text-gray-500 text-lg sm:text-xl min-[1700px]:text-lg leading-relaxed font-medium">
             Everything you need to run retail operations smoothly — from
             inventory accuracy to analytics, automation, and secure workflows.
           </p>
@@ -118,11 +118,11 @@ const Services = () => {
                   <Icon size={30} strokeWidth={2.5} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+                <h3 className="text-2xl min-[1700px]:text-xl font-bold text-[#1A1A1A] mb-4">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-500 leading-relaxed text-lg">
+                <p className="text-gray-500 leading-relaxed text-lg min-[1700px]:text-base">
                   {item.desc}
                 </p>
 

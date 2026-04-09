@@ -56,8 +56,8 @@ const FeatureBar = () => {
               <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-inner`}>
                 {React.cloneElement(feature.icon, { size: 24 })}
               </div>
-              <h4 className="text-lg font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
-              <p className="text-xs text-gray-500 font-bold leading-relaxed">{feature.desc}</p>
+              <h4 className="text-lg min-[1700px]:text-base font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
+              <p className="text-xs min-[1700px]:text-[10px] text-gray-500 font-bold leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>
