@@ -48,16 +48,18 @@ const FeatureBar = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((feature, i) => (
             <div 
-              key={i} 
-              className="flex flex-col items-center text-center p-6 bg-white rounded-[2rem] shadow-lg shadow-blue-200/30 border border-white transition-all hover:-translate-y-1.5 group"
+              key={i}
+              className="group relative"
               data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
               data-aos-delay={i * 150}
             >
-              <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-inner`}>
-                {React.cloneElement(feature.icon, { size: 24 })}
+              <div className="flex flex-col items-center text-center p-6 bg-white rounded-[2rem] shadow-lg shadow-blue-200/30 border border-white transition-all group-hover:-translate-y-1.5 cursor-pointer h-full">
+                <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-inner`}>
+                  {React.cloneElement(feature.icon, { size: 24 })}
+                </div>
+                <h4 className="text-lg min-[1700px]:text-[13px] font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
+                <p className="text-xs min-[1700px]:text-[10px] text-gray-500 font-bold leading-relaxed">{feature.desc}</p>
               </div>
-              <h4 className="text-lg min-[1700px]:text-[13px] font-extrabold text-[#1A1A1A] mb-2 leading-tight">{feature.title}</h4>
-              <p className="text-xs min-[1700px]:text-[10px] text-gray-500 font-bold leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>

@@ -115,7 +115,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full bg-blue-100 py-24 overflow-hidden"
+      className="relative w-full bg-blue-100 py-10 overflow-hidden"
     >
       {/* 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -126,7 +126,7 @@ const Contact = () => {
       <div className="relative mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
         
      {/* Header */}
-<div className="text-center max-w-3xl mx-auto mb-16 px-4" data-aos="fade-up">
+<div className="text-center max-w-3xl mx-auto mb-10 px-4" data-aos="fade-up">
   <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white shadow-sm mb-6 animate-fade-in">
     <span className="flex h-2 w-2 rounded-full bg-[#FF764D] animate-pulse" />
     <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A1A]">
@@ -135,13 +135,13 @@ const Contact = () => {
   </div>
 
   <h2 className="text-3xl sm:text-5xl min-[1700px]:text-[2.2rem] font-extrabold text-[#1A1A1A] tracking-tight mb-6 min-[1700px]:mb-3">
-    Let's start a <br className="hidden lg:block" />
+    Let's start a <br className="hidden sm:block" />
     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
       conversation
     </span>
   </h2>
 
-  <p className="text-gray-500 text-lg sm:text-xl min-[1700px]:text-[12px] leading-relaxed font-medium">
+  <p className="text-gray-500 text-base sm:text-xl min-[1700px]:text-[12px] leading-relaxed font-medium">
     Have questions about RMS System or want to schedule a demo?
     Drop us a message and our team will get back to you shortly.
   </p>
@@ -194,15 +194,15 @@ const Contact = () => {
                   rel="noreferrer"
                   className="group flex gap-5 items-start p-6 rounded-[2rem] bg-white border border-transparent shadow-sm hover:shadow-xl hover:border-orange-100 transition-all"
                 >
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-orange-50 text-[#FF764D] shrink-0 transition-transform group-hover:scale-110">
-                    <MapPin size={24} strokeWidth={2.5} />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center bg-orange-50 text-[#FF764D] shrink-0 transition-transform group-hover:scale-110">
+                    <MapPin size={22} sm:size={24} strokeWidth={2.5} />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Visit Us</p>
-                    <p className="text-lg font-bold text-[#1A1A1A] leading-tight">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">Visit Us</p>
+                    <p className="text-base sm:text-lg font-bold text-[#1A1A1A] leading-tight">
                       3A, Bertram St, Esplanade, Kolkata — 700087
                     </p>
-                    <p className="mt-2 text-sm text-[#FF764D] font-bold flex items-center gap-1">
+                    <p className="mt-2 text-xs sm:text-sm text-[#FF764D] font-bold flex items-center gap-1">
                       Open in Maps <ArrowRight size={14} />
                     </p>
                   </div>
@@ -231,7 +231,7 @@ const Contact = () => {
                         value={form.name}
                         onChange={onChange}
                         placeholder="Your name"
-                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
+                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-12 sm:px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -248,7 +248,7 @@ const Contact = () => {
                         value={form.email}
                         onChange={onChange}
                         placeholder="mail@example.com"
-                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
+                        className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-12 sm:px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -265,7 +265,7 @@ const Contact = () => {
                       value={form.phone}
                       onChange={onChange}
                       placeholder="Enter mobile number"
-                      className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
+                      className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-12 sm:px-14 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400"
                       type="tel"
                     />
                   </div>
@@ -279,7 +279,7 @@ const Contact = () => {
                     onChange={onChange}
                     rows={4}
                     placeholder="How can we help you?"
-                    className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-6 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400 resize-none"
+                    className="w-full bg-gray-50 border border-transparent rounded-[1.25rem] px-5 sm:px-6 py-4 text-[#1A1A1A] font-medium outline-none focus:bg-white focus:border-[#FF764D] focus:ring-4 focus:ring-orange-50 transition-all placeholder:text-gray-400 resize-none"
                   />
                 </div>
 

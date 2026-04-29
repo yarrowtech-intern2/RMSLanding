@@ -3,3 +3,14 @@
 html, body {
   overflow-x: hidden;
 }
+
+/* Global Hand Cursor for Interactive Elements */
+button, 
+a, 
+input[type="submit"], 
+input[type="button"],
+label,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer !important;
+}

@@ -35,7 +35,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="relative w-full bg-blue-100 py-24 overflow-hidden"
+      className="relative w-full bg-blue-100 py-10 overflow-hidden"
     >
       {/* Background Blur Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -47,7 +47,7 @@ const AboutUs = () => {
         
         {/* Header */}
         <div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10"
           data-aos="fade-up"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-full border border-white shadow-sm mb-6">
@@ -75,58 +75,62 @@ const AboutUs = () => {
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
           
           {/* Mission */}
           <div
             data-aos="fade-right"
-            className="rounded-[2rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+            className="group relative"
           >
-            <div className="flex items-center gap-5 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
-                <Target size={28} strokeWidth={2.5} />
+            <div className="rounded-[2.5rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl cursor-pointer h-full">
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
+                  <Target size={24} sm:size={28} strokeWidth={2.5} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">Our Mission</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
-            </div>
 
-            <p className="text-gray-600 leading-relaxed">
-              Our mission is to empower retail businesses through technology,
-              automation, and data-driven insights. RMS helps organizations
-              simplify operations, reduce errors, and enhance productivity
-              across every department.
-            </p>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                Our mission is to empower retail businesses through technology,
+                automation, and data-driven insights. RMS helps organizations
+                simplify operations, reduce errors, and enhance productivity
+                across every department.
+              </p>
+            </div>
           </div>
 
           {/* Vision */}
           <div
             data-aos="fade-left"
-            className="rounded-[2rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+            className="group relative"
           >
-            <div className="flex items-center gap-5 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
-                <Eye size={28} strokeWidth={2.5} />
+            <div className="rounded-[2.5rem] bg-white p-8 lg:p-10 border border-gray-100 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl cursor-pointer h-full">
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FF764D] shadow-inner group-hover:scale-110 transition">
+                  <Eye size={24} sm:size={28} strokeWidth={2.5} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">Our Vision</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
-            </div>
 
-            <p className="text-gray-600 leading-relaxed">
-              Our vision is to become the most trusted and intelligent retail
-              management platform globally, enabling retailers to adopt digital
-              transformation and achieve sustainable growth.
-            </p>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                Our vision is to become the most trusted and intelligent retail
+                management platform globally, enabling retailers to adopt digital
+                transformation and achieve sustainable growth.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Why Choose RMS */}
         <div data-aos="fade-up" className="text-center">
-          <h3 className="text-4xl sm:text-5xl min-[1700px]:text-[2.2rem] font-bold text-gray-900 mb-12 min-[1700px]:mb-6">
+          <h3 className="text-4xl sm:text-5xl min-[1700px]:text-[2.2rem] font-bold text-gray-900 mb-8 min-[1700px]:mb-6">
             Why Choose{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-orange-400">
               RMS System
             </span>
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {whyChoose.map((item, index) => {
               const Icon = item.icon;
 
@@ -135,17 +139,19 @@ const AboutUs = () => {
                   key={index}
                   data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                   data-aos-delay={index * 100}
-                  className="bg-white p-6 rounded-2xl border border-gray-100 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl group"
+                  className="group relative"
                 >
-                  <div
-                    className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition`}
-                  >
-                    <Icon size={20} strokeWidth={2.5} />
-                  </div>
+                  <div className="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100 shadow-md transition-all group-hover:-translate-y-1 group-hover:shadow-xl cursor-pointer h-full flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div
+                      className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition`}
+                    >
+                      <Icon size={20} strokeWidth={2.5} />
+                    </div>
 
-                  <p className="text-gray-900 text-sm font-semibold leading-relaxed">
-                    {item.text}
-                  </p>
+                    <p className="text-gray-900 text-sm sm:text-base font-bold leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               );
             })}

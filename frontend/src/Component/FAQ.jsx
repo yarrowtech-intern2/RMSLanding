@@ -37,7 +37,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="relative w-full bg-blue-100 py-24 overflow-hidden"
+      className="relative w-full bg-blue-100 py-10 overflow-hidden"
     >
       {/* Background Blur */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -49,7 +49,7 @@ const FAQ = () => {
 
         {/* Header */}
         <div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10"
           data-aos="fade-up"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-full border border-white shadow-sm mb-6">
@@ -115,7 +115,7 @@ const FAQ = () => {
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ${
-                    isOpen ? "max-h-[300px] pb-8 px-10" : "max-h-0"
+                    isOpen ? "max-h-[500px] pb-6 sm:pb-8 px-6 sm:px-10" : "max-h-0"
                   }`}
                 >
                   <p className="text-gray-500 text-lg min-[1700px]:text-[12px] leading-relaxed border-t border-orange-50 pt-6 min-[1700px]:pt-3">

@@ -22,7 +22,7 @@ const Footer = () => {
     "https://www.google.com/maps/search/?api=1&query=3A%2C%20Bertram%20St%2C%20Esplanade%2C%20Dharmatala%2C%20Taltala%2C%20Kolkata%2C%20West%20Bengal%20700087";
 
   return (
-    <footer className="relative w-full bg-blue-100 border-t border-gray-50 pt-24 pb-12 overflow-hidden">
+    <footer className="relative w-full bg-blue-100 border-t border-gray-50 pt-10 pb-12 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           

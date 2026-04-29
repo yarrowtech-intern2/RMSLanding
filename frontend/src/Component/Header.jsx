@@ -105,22 +105,32 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`lg:hidden pointer-events-auto transition-all duration-300 overflow-hidden mx-4 mt-4 rounded-[2rem] bg-blue-100/90 backdrop-blur-2xl shadow-2xl border border-white/20 ${
-          mobileOpen ? "max-h-screen opacity-100 py-6" : "max-h-0 opacity-0"
+        className={`lg:hidden pointer-events-auto transition-all duration-500 ease-in-out overflow-hidden mx-4 mt-3 rounded-[2.5rem] bg-white/80 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/40 ${
+          mobileOpen ? "max-h-[500px] opacity-100 py-8" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-8 flex flex-col gap-4">
-          {navItems.map((item) => (
+        <div className="px-10 flex flex-col gap-6">
+          {navItems.map((item, idx) => (
             <button
               key={item.id}
               onClick={() => scrollToId(item.id)}
-              className={`text-left text-lg font-bold py-2 ${
-                activeId === item.id ? "text-[#FF764D]" : "text-gray-700"
+              className={`text-left text-xl font-bold py-1 transition-all duration-300 ${
+                activeId === item.id 
+                  ? "text-[#FF764D] translate-x-2" 
+                  : "text-gray-700 hover:text-[#FF764D] hover:translate-x-1"
               }`}
+              style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {item.label}
             </button>
           ))}
+          
+          <button 
+            onClick={() => scrollToId('contact')}
+            className="mt-4 w-full bg-[#FF764D] text-white font-black py-4 rounded-2xl shadow-lg shadow-orange-100 active:scale-95 transition-all"
+          >
+            Get Started
+          </button>
         </div>
       </div>
     </header>

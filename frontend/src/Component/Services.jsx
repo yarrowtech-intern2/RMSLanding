@@ -6,6 +6,7 @@ import {
   Users,
   Barcode,
   Workflow,
+  ArrowRight
 } from "lucide-react";
 
 const Services = () => {
@@ -63,7 +64,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative w-full bg-blue-100 py-24 overflow-hidden"
+      className="relative w-full bg-blue-100 py-10 overflow-hidden"
     >
       {/* Background Blur */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -74,7 +75,7 @@ const Services = () => {
       <div className="relative mx-auto w-full max-w-7xl min-[1700px]:max-w-5xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <div className="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
 
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-full border border-white shadow-sm mb-6">
             <span className="flex h-2 w-2 rounded-full bg-[#FF764D] animate-pulse"></span>
@@ -109,23 +110,30 @@ const Services = () => {
                 key={item.title}
                 data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
                 data-aos-delay={idx * 120}
-                className="group p-8 rounded-[2rem] bg-white border border-gray-100 shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="group relative"
               >
-
                 <div
-                  className={`w-16 h-16 rounded-2xl ${colorClass} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}
+                  className="p-8 rounded-[2rem] bg-white border border-gray-100 shadow-md transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2 cursor-pointer h-full"
                 >
-                  <Icon size={30} strokeWidth={2.5} />
+                  <div
+                    className={`w-16 h-16 rounded-2xl ${colorClass} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}
+                  >
+                    <Icon size={30} strokeWidth={2.5} />
+                  </div>
+
+                  <h3 className="text-2xl min-[1700px]:text-[14px] font-bold text-[#1A1A1A] mb-4 min-[1700px]:mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-500 leading-relaxed text-lg min-[1700px]:text-[11px]">
+                    {item.desc}
+                  </p>
+
+                  <div className="mt-6 flex items-center gap-2 text-[#FF764D] font-black text-sm opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0">
+                    <span>EXPLORE MORE</span>
+                    <ArrowRight size={16} strokeWidth={3} />
+                  </div>
                 </div>
-
-                <h3 className="text-2xl min-[1700px]:text-[14px] font-bold text-[#1A1A1A] mb-4 min-[1700px]:mb-2">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-500 leading-relaxed text-lg min-[1700px]:text-[11px]">
-                  {item.desc}
-                </p>
-
               </div>
             );
           })}
