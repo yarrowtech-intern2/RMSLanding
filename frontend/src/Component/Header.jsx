@@ -33,6 +33,18 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // ✅ Close mobile menu on scroll (Reliable method)
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const handleScrollClose = () => {
+      setMobileOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScrollClose, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollClose);
+  }, [mobileOpen]);
+
   useEffect(() => {
     const handleSpy = () => {
       const scrollPos = window.scrollY + headerOffset + 100;
@@ -50,7 +62,7 @@ const Header = () => {
   }, [navItems]);
 
   return (
-    <header className="fixed top-3 sm:top-6 left-0 z-50 w-full pointer-events-none">
+    <header className="fixed top-4 sm:top-6 left-0 z-50 w-full pointer-events-none">
       <div className="mx-auto w-full px-4 sm:px-10 lg:px-12 flex items-center justify-between relative">
         
         {/* Logo (Left Corner - Baire) */}

@@ -38,12 +38,12 @@ const Hero = () => {
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-[#1A1A1A]">Retail Management System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-[4.2rem] font-black text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-6 sm:mb-8 tracking-tighter" data-aos="fade-up">
+          <h1 className="text-3xl sm:text-6xl lg:text-[4.2rem] font-black text-[#1A1A1A] leading-[1.1] sm:leading-[1] mb-6 sm:mb-8 tracking-tighter" data-aos="fade-up">
             A unified digital <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF764D] to-[#FF9D80]">platform</span>
           </h1>
 
-          <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed font-bold opacity-90" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed font-bold opacity-90" data-aos="fade-up" data-aos-delay="100">
             Elevate your retail operations with a connected digital ecosystem. 
             Automate workflows and coordinate teams in real-time.
           </p>
@@ -60,7 +60,7 @@ const Hero = () => {
                     key={i} 
                     className="flex items-center justify-start space-x-3 sm:space-x-4 group cursor-pointer"
                     data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-                    data-aos-delay={400 + (i * 150)}
+                    data-aos-delay={100 + (i * 50)}
                   >
                     <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-xl shadow-blue-100/40 border border-white flex items-center justify-center text-[#FF764D] transition-all group-hover:scale-110 group-hover:shadow-orange-100">
                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />
@@ -77,7 +77,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content - Character */}
-        <div className="flex-1 mt-2 sm:mt-20 lg:mt-0 relative w-full flex justify-center items-center" data-aos="fade-left">
+        <div className="flex-1 mt-0 sm:mt-20 lg:mt-0 relative w-full flex justify-center items-center" data-aos="fade-left">
           
           {/* Decorative Elements - Increased back to full scale */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] sm:w-[105%] sm:h-[105%] border-2 border-blue-300/20 rounded-[3.5rem] sm:rounded-[5rem] rotate-[10deg] -z-10 animate-float" />

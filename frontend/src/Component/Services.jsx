@@ -109,7 +109,7 @@ const Services = () => {
               <div
                 key={item.title}
                 data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
-                data-aos-delay={idx * 120}
+                data-aos-delay={idx * 50}
                 className="group relative"
               >
                 <div

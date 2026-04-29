@@ -28,10 +28,10 @@ const Contact = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,
       easing: "ease-out-cubic",
       once: true,
-      offset: 100,
+      offset: 50,
     });
     AOS.refresh();
   }, []);

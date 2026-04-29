@@ -138,7 +138,7 @@ const AboutUs = () => {
                 <div
                   key={index}
                   data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-                  data-aos-delay={index * 100}
+                  data-aos-delay={index * 50}
                   className="group relative"
                 >
                   <div className="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100 shadow-md transition-all group-hover:-translate-y-1 group-hover:shadow-xl cursor-pointer h-full flex flex-col items-center sm:items-start text-center sm:text-left">

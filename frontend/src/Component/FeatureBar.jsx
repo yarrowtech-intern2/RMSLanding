@@ -51,7 +51,7 @@ const FeatureBar = () => {
               key={i}
               className="group relative"
               data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-              data-aos-delay={i * 150}
+              data-aos-delay={i * 50}
             >
               <div className="flex flex-col items-center text-center p-6 bg-white rounded-[2rem] shadow-lg shadow-blue-200/30 border border-white transition-all group-hover:-translate-y-1.5 cursor-pointer h-full">
                 <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-inner`}>
