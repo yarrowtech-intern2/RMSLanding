@@ -43,7 +43,7 @@ const FeatureBar = () => {
   ];
 
   return (
-    <div className="bg-blue-100 py-16">
+    <div className="bg-blue-100 py-8">
       <div className="max-w-7xl min-[1700px]:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((feature, i) => (

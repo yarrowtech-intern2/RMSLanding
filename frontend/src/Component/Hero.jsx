@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen sm:min-h-[90vh] lg:min-h-screen bg-[#F0F7FF] pt-20 sm:pt-24 pb-6 lg:pb-12 overflow-hidden flex items-center"
+      className="relative h-auto sm:min-h-[90vh] lg:min-h-screen bg-[#F0F7FF] pt-14 sm:pt-24 pb-4 lg:pb-12 overflow-hidden flex items-center"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="absolute bottom-[5%] -right-[5%] w-[40%] h-[40%] bg-orange-300/15 blur-[130px] rounded-full animate-float-slow" />
       </div>
 
-      <div className="max-w-7xl min-[1700px]:max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col lg:flex-row items-center relative z-10 gap-4 sm:gap-0">
+      <div className="max-w-7xl min-[1700px]:max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col lg:flex-row items-center relative z-10 gap-2 sm:gap-0">
         
         {/* Left Content */}
         <div className="flex-1 text-center lg:text-left lg:pr-12" data-aos="fade-right">
@@ -77,7 +77,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content - Character */}
-        <div className="flex-1 mt-4 sm:mt-20 lg:mt-0 relative w-full flex justify-center items-center" data-aos="fade-left">
+        <div className="flex-1 mt-2 sm:mt-20 lg:mt-0 relative w-full flex justify-center items-center" data-aos="fade-left">
           
           {/* Decorative Elements - Increased back to full scale */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] sm:w-[105%] sm:h-[105%] border-2 border-blue-300/20 rounded-[3.5rem] sm:rounded-[5rem] rotate-[10deg] -z-10 animate-float" />
